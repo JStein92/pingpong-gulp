@@ -18,4 +18,25 @@ Calculator.prototype.pingPong = function(goal) {
   return output;
 };
 
+// Addition
+Calculator.prototype.addition = function(num1, num2) {
+  return num1 + num2;
+};
+
+// Subtraction
+Calculator.prototype.subtraction = function(num1, num2) {
+  return num1 - num2;
+};
+
+// Division
+Calculator.prototype.division = function(num1, num2) {
+  return num1 / num2;
+};
+
+// Multiplication
+Calculator.prototype.multiplication = function(num1, num2) {
+  return num1 * num2;
+};
+
+
 exports.calculatorModule = Calculator;

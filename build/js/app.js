@@ -19,10 +19,31 @@ Calculator.prototype.pingPong = function(goal) {
   return output;
 };
 
+// Addition
+Calculator.prototype.addition = function(num1, num2) {
+  return num1 + num2;
+};
+
+// Subtraction
+Calculator.prototype.subtraction = function(num1, num2) {
+  return num1 - num2;
+};
+
+// Division
+Calculator.prototype.division = function(num1, num2) {
+  return num1 / num2;
+};
+
+// Multiplication
+Calculator.prototype.multiplication = function(num1, num2) {
+  return num1 * num2;
+};
+
+
 exports.calculatorModule = Calculator;
 
 },{}],2:[function(require,module,exports){
-var Calculator = require('./../js/pingpong.js').calculatorModule;
+var Calculator = require('./../js/calculator.js').calculatorModule;
 
 $(function() {
   $('#ping-pong-form').submit(function(e){
@@ -34,6 +55,43 @@ $(function() {
       $('#solution').append("<li>" + element + "</li>");
     });
   });
+
+  $('#addition').submit(function(e){
+    e.preventDefault();
+    var num1 = parseInt($('#num1').val());
+    var num2 = parseInt($('#num2').val());
+    var simpleCalculator = new Calculator("whatever");
+    var output = simpleCalculator.addition(num1,num2);
+    $('#solution').text(output);
+  });
+
+  $('#subtraction').submit(function(e) {
+    e.preventDefault();
+    var num1 = parseInt($('#subNum1').val());
+    var num2 = parseInt($('#subNum2').val());
+    var simpleCalculator = new Calculator("this");
+    var output = simpleCalculator.subtraction(num1, num2);
+    $('#solution').text(output);
+  });
+
+  $('#division').submit(function(e) {
+    e.preventDefault();
+    var num1 = parseInt($('#divNum1').val());
+    var num2 = parseInt($('#divNum2').val());
+    var simpleCalculator = new Calculator("bleh");
+    var output = simpleCalculator.division(num1, num2);
+    $('#solution').text(output);
+  });
+
+  $('#multiplication').submit(function(e) {
+    e.preventDefault();
+    var num1 = parseInt($('#multiNum1').val());
+    var num2 = parseInt($('#multiNum2').val());
+    var simpleCalculator = new Calculator("this");
+    var output = simpleCalculator.multiplication(num1, num2);
+    $('#solution').text(output);
+  });
+
 });
 
 $(function(){
@@ -45,4 +103,4 @@ $(function(){
   });
 });
 
-},{"./../js/pingpong.js":1}]},{},[2]);
+},{"./../js/calculator.js":1}]},{},[2]);
